@@ -2,6 +2,22 @@
 
 This application was generated using JHipster 6.9.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.9.1](https://www.jhipster.tech/documentation-archive/v6.9.1).
 
+## Delivery
+
+### Create a runnable jar
+
+.\mvnw clean install spring-boot:repackage
+The jar will be generated in your project target folder.
+
+### Run from sources
+
+.\mvnw clean install spring-boot:run
+
+### Execute tests
+
+Execute all tests (backend & frontend)
+.\mvnw clean test
+
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
