@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "nl.feniqs.qwik.web"
+    },
+    "jhipsterVersion": "6.9.1",
+    "applicationType": "monolith",
+    "baseName": "feniqsweb",
+    "packageName": "nl.feniqs.qwik.web",
+    "packageFolder": "nl/feniqs/qwik/web",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "cacheProvider": "caffeine",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "rememberMeKey": "06c1be77bb3b7a4fe0ab54349ccd7abced0286c9cd7f991602d0d953e6ec3a045beb6818615cc43e6b3299a35652f554cd61",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "united",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1591613772734,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
