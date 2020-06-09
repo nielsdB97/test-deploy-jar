@@ -392,8 +392,16 @@
                             <artifactId>asciidoctorj-pdf</artifactId>
                             <version>1.5.3</version>
                         </dependency>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+    	                    <artifactId>asciidoctorj-diagram</artifactId>
+                            <version>1.5.8</version>
+                        </dependency>
                     </dependencies>
                     <configuration>
+                        ​<requires>
+                            ​<require>asciidoctor-diagram</require>
+                        ​</requires>
                         <attributes>
                             <!-- https://graphviz.org/_pages/Download/Download_windows.html -->
                             <graphvizdot>C:\Program Files (x86)\Graphviz2.38\bin\dot</graphvizdot>
@@ -408,13 +416,10 @@
                             </goals>
                             <configuration>
                                 <backend>pdf</backend>
+                                <sourceDocumentName>documentatie.adoc</sourceDocumentName>
+                                <outputDirectory>${project.build.directory}/documentatie</outputDirectory>
                                 <attributes>
-                                    <imagesdir>./images</imagesdir>
-                                    <toc>left</toc>
-                                    <icons>font</icons>
-                                    <sectanchors>true</sectanchors>
-                                    <idprefix/>
-                                    <idseparator>-</idseparator>
+                                    <imagesdir>${project.build.directory}/generated-images</imagesdir>
                                 </attributes>
                             </configuration>
                         </execution>
