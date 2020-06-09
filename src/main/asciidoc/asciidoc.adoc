@@ -1,0 +1,34 @@
+== Ascii Doctor (Doc-as-code)
+
+In dit project wordt de documentatie bij het software product bewaard.
+De documentatie is geschreven met asciidoc in de source folder (src/main/asciidoc) van het project.
+Tijdens het maken van het software product wordt deze documentatie tevens omgezet naar 
+PDF (of HTML5).
+
+Quick reference: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+
+=== Diagrammen
+
+Voor diagrammen wordt gebruik gemaakt van PlantUML waarmee eenvoudig met tekst een diagram kan worden gemaakt.
+Graphviz is vervolgens nodig om deze diagrammen om te zetten naar een afbeelding.
+
+Download Graphviz (voor Windows): https://graphviz.org/_pages/Download/Download_windows.html.
+
+Installeer Graphviz naar C:\Program Files (x86)\Graphviz2.38\ en dan zou dit project de diagrammen automatisch moeten omzetten tijdens het bouwen.
+
+PlantUML Quick Reference: https://plantuml.com/
+
+Preview in Microsoft Visual Studio Code is mogelijk door de plantuml plugin te installeren.
+
+Voorbeeld van een class diagram:
+[plantuml, class-diagram-example, png]     
+....
+include::diagram-examples/class-diagram-example.puml[]
+....
+
+Voorbeeld van een C4 diagram:
+
+[plantuml, systeem-context-diagram-example, png]     
+....
+include::diagram-examples/banking-systeem-context.puml[]
+....
