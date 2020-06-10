@@ -1,3 +1,9 @@
 = Documentatie
 
+== Doc-as-Code
+
 include::asciidoc.adoc[]
+
+== Beveiliging
+
+include::security.adoc[]

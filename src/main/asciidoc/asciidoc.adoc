@@ -1,20 +1,21 @@
-== Ascii Doctor (Doc-as-code)
+=== Ascii Doctor
 
-In dit project wordt de documentatie bij het software product bewaard.
-De documentatie is geschreven met asciidoc in de source folder (src/main/asciidoc) van het project.
-Tijdens het maken van het software product wordt deze documentatie tevens omgezet naar 
-PDF (of HTML5).
+De documentatie van dit product is gegenereerd met Ascii Doctor.
+Ascii Doctor is een doc-as-code oplossing waarbij de documentatie bij de code wordt bewaard.
+Tijdens het maken van het software product wordt deze documentatie omgezet naar PDF (of HTML5) en kan worden uitgeleverd met het product.
 
 Quick reference: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
 
-=== Diagrammen
+==== PlantUML Diagrammen
 
-Voor diagrammen wordt gebruik gemaakt van PlantUML waarmee eenvoudig met tekst een diagram kan worden gemaakt.
-Graphviz is vervolgens nodig om deze diagrammen om te zetten naar een afbeelding.
+De diagrammen in deze documentatie zijn opgesteld in PlantUML.
+Tijdens het maken van het software product worden de diagrammen m.b.v. Graphviz omgezet naar een afbeelding en in de documentatie opgenomen.
 
 Download Graphviz (voor Windows): https://graphviz.org/_pages/Download/Download_windows.html.
 
 Installeer Graphviz naar C:\Program Files (x86)\Graphviz2.38\ en dan zou dit project de diagrammen automatisch moeten omzetten tijdens het bouwen.
+
+TIP: In de pom.xml van het project is opgenomen waar Graphviz lokaal is geinstalleerd.
 
 PlantUML Quick Reference: https://plantuml.com/
 

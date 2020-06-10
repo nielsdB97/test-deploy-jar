@@ -1,0 +1,14 @@
+=== Authenticatie proces
+
+Component model
+
+Sequence diagram
+
+=== Encryptie van accounts in de configuratie van Spring Boot en Jasypt
+
+Voorbeelden: 
+
+https://www.baeldung.com/spring-boot-jasypt
+
+https://stackoverflow.com/questions/37404703/spring-boot-how-to-hide-passwords-in-properties-file
+
