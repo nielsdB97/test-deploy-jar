@@ -1,0 +1,14 @@
+Qwik wordt ingericht met een app.
+Het onderstaande systeem overzicht laat de verschillende systemen zien en waar deze zich bevinden.
+
+[plantuml, qwik-systeem-context, png]     
+....
+include::diagrams/systeem-context.puml[]
+....
+
+Het onderstaande deployment model laat zien hoe de individuele systemen zijn opgebouwd.
+
+[plantuml, qwik-deployment-view, png]     
+....
+include::diagrams/deployment-view.puml[]
+....

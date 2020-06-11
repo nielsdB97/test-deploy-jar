@@ -1,0 +1,20 @@
+Voor het ontwikkelen van de WebGUI is gekozen voor Microsoft Visual Studio Code.
+Deze is gratis te downloaden en biedt goede ondersteuning voor ontwikkelen in Java en Javascript, TypeScript, HTML en CSS.
+
+Na installatie zijn de volgende extensions handig om extra toe te voegen aan Visual Studio:
+
+- Java (RedHat)
+- Maven
+- HTML/CSS
+- TSLint (ESLint)
+- JS-CSS-HTML formatter (Prettier)
+- Terminal
+- Typescript Hero
+- Babel javascript 
+- Node.js intellisense
+- Git ignore
+- SpringBoot tools
+- SpringBoot extension pack
+- Asciidoc
+- PlantUML
+- Jenkins file support (ivory lab)

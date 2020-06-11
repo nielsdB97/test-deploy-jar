@@ -1,0 +1,63 @@
+@startuml
+title Qwik Deployment view
+
+node "Werkplek: eindgebruiker" as EW {
+    node "Window/Linux" as UOS {
+        node "Java Virtuele Machine" as JavaQwikUserApp {
+            component "Qwik Eindgebruiker App" as QwikUserApp
+        }
+    }
+}
+
+node "Werkplek: inrichter\n(huidige situatie: Bastion host/Op lokatie)" as Bastion {
+    node "Window/Linux" as HIOS {
+        node "Java Virtuele Machine" as JavaQwikIApp {
+            component "Qwik Inrichter App" as HIApp
+        }
+        agent "VPN Server\n(toekomstige situatie?)" as VPNServer
+    }
+}
+
+node "Werkplek: inrichter\n(toekomstige situatie)" as TIW {
+    node "Window/Linux" as TIOS {
+        component "Webbrowser" as Browser
+        agent "VPN Client" as VPNClient
+    }
+}
+TIW -[hidden]left- Bastion
+node Server {
+    node "Window/Linux" as SOS {
+        file "Qwik Web App Configuratie" as AppConfig
+        file "Qwik Web App Omgevingsconfiguratie" as OmgConfig
+        file "Qwik Web App Inrichting" as InrichtingConfig
+        node "Java Virtuele Machine\n(OpenJDK 11)" as JavaQwikWebApp {
+            component "Qwik Web App" as QwikWebApp
+        }
+        QwikWebApp .. AppConfig: [lezen]
+        QwikWebApp .. OmgConfig: [lezen]
+        QwikWebApp .. InrichtingConfig: [lezen/schrijven]
+        node "Java Virtuele Machine" as JavaQwikServer {
+            component "Qwik Server" as QwikServer
+        }
+        node "Database\n(Microsoft SQL/Oracle)" as RDBMS {
+            database "Qwik Database" as QwikDb
+        }
+    }
+}
+interface "SOAP/HTTPS" as SOAP
+interface VPN
+interface HTTPS
+interface JDBC
+
+RDBMS ---up--- JDBC
+HIApp --> JDBC
+QwikUserApp --> JDBC
+QwikWebApp --> JDBC
+QwikServer --> JDBC
+QwikServer =right= SOAP
+VPNServer =up= VPN
+VPNClient -down---> VPN
+QwikWebApp -up- HTTPS
+Browser .down. HTTPS: (over VPN)
+Bastion -down- Server
+@enduml
