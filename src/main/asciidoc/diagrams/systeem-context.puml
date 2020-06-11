@@ -5,10 +5,19 @@ title Qwik context diagram\n(productie)
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Component.puml
-!include c4/c4-user.puml
+'Layout actors 
+skinparam actor {
+    StereotypeFontColor #444444
+    FontColor #444444
+    BackgroundColor #F0F0FE
+    BorderColor PERSON_BG_COLOR
+}
+!define User(e_alias, e_label, e_descr) actor "==e_label\n\n e_descr" <<person>> as e_alias
+'/Layout actors
 
 Enterprise_Boundary(IGH,"Feniqs") {
     User(inrichter,"Qwik inrichters", "Werknemer van Feniqs")
+    System(Browser, "Webbrowser","Chrome | Safari |\nIE 11 | MS Edge")
 }
 
 System_Ext(afnemer,"Externe afnemers", "Afnemer van pensioen informatie")
@@ -19,18 +28,17 @@ Enterprise_Boundary(Klant,"Pensioenfonds/verzekeraar Intranet") {
     System_Boundary(KlantWerkplek,"Eindgebruiker werkplek") {
         System(QwikFX, "Qwik Eindgebruiker App", "JavaFX")
     }
-    System_Boundary(Bastion,"Inrichter werkplek\n(Bastion host/VPN Server)") {
-        System(Browser, "Webbrowser","Chrome | Safari |\nIE 11 | MS Edge")
-        System(QwikAdmin, "Qwik Inrichting App\n(huidig)", "JavaFX")
+    System_Boundary(Bastion,"Inrichter werkplek") {
+        System(QwikAdmin, "Qwik Inrichter App\n(huidig)", "JavaFX")
     }
     System_Boundary(Qwik,"Server") {
         System(QwikServer, "Qwik Server", "Java")
-        System(QwikDatabase,"Qwik Database", "Microsoft SQL")
+        System(QwikDatabase,"Qwik Database", "Microsoft SQL | Oracle")
         System(QwikWebGUI,"Qwik Web App\n(toekomst)", "JHipster\n[SpringBoot, React /w Typescript]")
         QwikServer -up-> QwikDatabase
         QwikFX --> QwikDatabase
         QwikWebGUI --> QwikDatabase: [jdbc]
-        QwikAdmin --> QwikDatabase
+        QwikAdmin -left-> QwikDatabase
     }
     System(DNS,"Domain Name System Server")
     
@@ -38,9 +46,9 @@ Enterprise_Boundary(Klant,"Pensioenfonds/verzekeraar Intranet") {
     Browser -[hidden]- QwikAdmin
 }
 
-inrichter -left-> Browser: Inrichten van Qwik\n[VPN]\n//(toekomstige situatie)//
-Browser -left-> QwikWebGUI: [https]
-inrichter .left.> QwikAdmin: Inrichten van Qwik\n[VPN of fysiek op lokatie]\n//(huidige situatie)//
+inrichter -left-> Browser: Inrichten van Qwik\n//(toekomstige situatie)//
+Browser -left-> QwikWebGUI: [https] (over VPN)
+inrichter .left.> QwikAdmin: Inrichten van Qwik\n[fysiek op lokatie]\n//(huidige situatie)//
 eindgebruiker --> QwikFX: Administreren van pensioenen in Qwik
 afnemer -up-> QwikServer: Uitvragen van overzichten\n[SOAP over https]
 @enduml

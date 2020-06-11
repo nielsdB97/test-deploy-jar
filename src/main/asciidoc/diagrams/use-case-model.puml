@@ -1,0 +1,68 @@
+@startuml
+title Use Case Model - Inrichter
+
+actor Inrichter as User
+
+rectangle "Qwik Inrichter App" as App {
+    usecase "Raadplegen van de inrichting van deze GUI" as Kern
+        usecase "Map database tabel inhoud op dynamisch venster" as MDV
+        usecase "Map menu items" as MMI
+        usecase "Opvoeren lookup queries" as QRY
+        usecase "..." as KETC
+    usecase "Raadplegen van de inrichting van Qwik" as Inrichting
+        usecase "Opvoeren pensioen verzekeraar" as ORG 
+        usecase "Opvoeren pensioen reken regels" as PRR
+            usecase "Testen reken regels" as TRR
+        usecase "Opvoeren pensioen producten" as PRO
+        usecase "Opvoeren landelijke statistieken" as STAT
+        usecase "..." as IETC
+    usecase "Raadplegen pensioen data" as Data
+        usecase "Opvoeren werkgever (deelnemer)" as WG
+        usecase "Opvoeren reglement" as REG
+        usecase "Opvoeren batch vragen(?) formulier in Qwik" as FORM
+        usecase "..." as DETC
+    usecase "Inloggen" as AUTH
+
+}
+
+
+User -right- Kern
+    MDV .down.> Kern: extends
+    MMI .> Kern: extends
+    QRY .> Kern: extends
+    KETC .up.> Kern: extends
+User --right-- Inrichting
+    ORG .down.> Inrichting: extends
+    PRR .down.> Inrichting: extends
+        TRR .> PRR: extends
+    PRO .> Inrichting: extends
+    STAT .up.> Inrichting: extends
+    IETC .up.> Inrichting: extends
+User -right- Data
+    WG .down.> Data
+    REG .right.> Data
+    FORM .> Data
+    DETC .up.> Data
+
+App .left.> AUTH: includes
+
+'Forceer positionering
+User -[hidden]left- App
+Kern ---[hidden]down--- Inrichting
+    MDV -[hidden]- MMI
+    MMI -[hidden]- QRY
+    QRY -[hidden]- KETC
+Inrichting ---[hidden]down--- Data
+    ORG -[hidden]- PRR
+    PRR -[hidden]- PRO
+    PRO -[hidden]- STAT
+    STAT -[hidden]- IETC
+Data --[hidden]down-- AUTH
+    WG -[hidden]- REG
+    REG -[hidden]- FORM
+    FORM -[hidden]- DETC
+'/Forceerd positionering
+
+
+
+@enduml

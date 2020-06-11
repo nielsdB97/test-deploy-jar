@@ -12,7 +12,7 @@ node "Werkplek: eindgebruiker" as EW {
 node "Werkplek: inrichter\n(huidige situatie: Bastion host/Op lokatie)" as Bastion {
     node "Window/Linux" as HIOS {
         node "Java Virtuele Machine" as JavaQwikIApp {
-            component "Qwik Inrichting App" as HIApp
+            component "Qwik Inrichter App" as HIApp
         }
         agent "VPN Server\n(toekomstige situatie?)" as VPNServer
     }
@@ -27,11 +27,15 @@ node "Werkplek: inrichter\n(toekomstige situatie)" as TIW {
 TIW -[hidden]left- Bastion
 node Server {
     node "Window/Linux" as SOS {
-        file "Qwik Web App Configuratie" as Config
+        file "Qwik Web App Configuratie" as AppConfig
+        file "Qwik Web App Omgevingsconfiguratie" as OmgConfig
+        file "Qwik Web App Inrichting" as InrichtingConfig
         node "Java Virtuele Machine\n(OpenJDK 11)" as JavaQwikWebApp {
             component "Qwik Web App" as QwikWebApp
         }
-        QwikWebApp .. Config
+        QwikWebApp .. AppConfig: [lezen]
+        QwikWebApp .. OmgConfig: [lezen]
+        QwikWebApp .. InrichtingConfig: [lezen/schrijven]
         node "Java Virtuele Machine" as JavaQwikServer {
             component "Qwik Server" as QwikServer
         }

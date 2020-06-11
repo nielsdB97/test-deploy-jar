@@ -1,0 +1,24 @@
+
+JHipster is een framework dat de ontwikkeling van een webapplicatie makkelijk maakt door Spring Boot (backend applicatie) en React (frontend applicatie) te combineren in een project.
+In dat project zijn beide al gekoppeld en wordt tevens een basis implementatie meegeleverd voor authenticatie van gebruikers en voor het bouwen van het eindproduct.
+
+Met NodeJS kan vanaf de commandline een nieuw project worden gemaakt:
+----
+$> npx generate-jhipster
+    keuze architectuur: monolith
+    keuze communicatie: geen webflux
+    keuze app name: feniqsweb
+    keuze package: nl.feniqs.qwik.web
+    keuze JHipster registry: Nee?
+    keuze security: HTTP Session authentication
+    keuze database type: SQL
+    keuze test database ondersteuning: H2 in memory
+    keuze caching strategie: Caffeine
+    keuze 2nd level cache: Nee
+    keuze project build tool: Maven
+    keuze aanvullende technologiën: Geen (OpenAPI misschien voor test/onderzoek doeleinden?)
+    keuze frontend framework: React
+    keuze frontend theme: gekozen maakt niet uit (-> united)
+    keuze internationalizatie: nee
+    keuze aanvullende test frameworks: nee
+----

@@ -1,9 +1,17 @@
 = Documentatie
 
-== Doc-as-Code
+== Inrichter functionaliteiten
 
-include::asciidoc.adoc[]
+include::functionaliteit.adoc[]
+
+== Systeem overzicht
+
+include::systeem.adoc[]
 
 == Beveiliging
 
 include::security.adoc[]
+
+== Development
+
+include::development.adoc[]

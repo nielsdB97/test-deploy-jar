@@ -1,0 +1,6 @@
+In het onderstaande diagram zijn op hoog niveau de verschillende functionaliteiten voor de Qwik inrichter benoemd met enkele voorbeelden.
+
+[plantuml, qwik-inrichter-use-case-model, png]     
+....
+include::diagrams/use-case-model.puml[]
+....

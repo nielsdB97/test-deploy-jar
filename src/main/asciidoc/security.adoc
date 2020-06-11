@@ -1,3 +1,6 @@
+Beveiliging is van toepassing op verschillende niveau's.
+In de volgende secties worden deze individueel toegelicht.
+
 === Authenticatie proces
 
 Component model
