@@ -1,17 +1,36 @@
-= Documentatie
+:doctype: book
+:source-highlighter: coderay
+:listing-caption: Listing
+:pdf-page-size: A4
+
+:toc: 
+:toc-placement: left
+:toclevels: 4
+:icons: font
+
+= Qwik WebGUI
+Developer Guide
 
 == Inrichter functionaliteiten
 
 include::functionaliteit.adoc[]
 
+<<<
 == Systeem overzicht
 
 include::systeem.adoc[]
 
+<<<
 == Beveiliging
 
 include::security.adoc[]
 
+<<<
 == Development
 
 include::development.adoc[]
+
+<<<
+== Software Delivery
+
+include::delivery.adoc[]

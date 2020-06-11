@@ -1,0 +1,6 @@
+TIP: Indien er geen delivery ecosysteem is dan kan deze worden afgenomen in de cloud. GitLab met haar pipelines (maken en testen van producten) en Rails (opslag van producten)
+
+CAUTION: Automatisch deployen naar een Test VM
+
+CAUTION: Versionering (Maven enforcer plugin?)
+

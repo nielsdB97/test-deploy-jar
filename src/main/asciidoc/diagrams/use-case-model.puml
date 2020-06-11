@@ -31,7 +31,7 @@ User -right- Kern
     MMI .> Kern: extends
     QRY .> Kern: extends
     KETC .up.> Kern: extends
-User --right-- Inrichting
+User ----right---- Inrichting
     ORG .down.> Inrichting: extends
     PRR .down.> Inrichting: extends
         TRR .> PRR: extends
@@ -48,11 +48,11 @@ App .left.> AUTH: includes
 
 'Forceer positionering
 User -[hidden]left- App
-Kern ---[hidden]down--- Inrichting
+Kern ---[hidden]down-- Inrichting
     MDV -[hidden]- MMI
     MMI -[hidden]- QRY
     QRY -[hidden]- KETC
-Inrichting ---[hidden]down--- Data
+Inrichting ---[hidden]down-- Data
     ORG -[hidden]- PRR
     PRR -[hidden]- PRO
     PRO -[hidden]- STAT
