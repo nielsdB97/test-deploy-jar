@@ -1,0 +1,11 @@
+@startuml
+hide time-axis
+concise "Software Delivery van de Qwik Inrichter App" as step
+
+step is Lokale code wijzigingen
+
+@step
+0 is push code wijzigingen
+1 
+
+@enduml
