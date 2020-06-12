@@ -26,3 +26,5 @@ include::diagrams/use-case-model.puml[]
 |F04
 |Wordt de Qwik Inrichter App alleen gebruikt door medewerkers van IG&H danwel de pensioenfonds/verzekeraar?
 |
+
+|===
