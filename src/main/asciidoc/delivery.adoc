@@ -4,3 +4,7 @@ CAUTION: Automatisch deployen naar een Test VM
 
 CAUTION: Versionering (Maven enforcer plugin?)
 
+[plantuml,delivery-pipeline,png]
+....
+include::diagrams/delivery-pipeline.puml[]
+....

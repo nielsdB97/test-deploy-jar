@@ -1,11 +1,56 @@
 @startuml
 hide time-axis
-concise "Software Delivery van de Qwik Inrichter App" as step
+scale 1 as 25 pixels
+concise "//Build pipeline//" as build
+concise "**Build repository**" as dev
+concise "//Integration pipeline//" as ci
+concise "**Product repository**" as master
+concise "**__Klant omgevingen__**" as production
 
-step is Lokale code wijzigingen
+build is "Laatste stand"
+dev is "Release candidate (versie 1)"
+master is "App (versie 1)"
 
-@step
-0 is push code wijzigingen
-1 
+@1
+build is "Code wijziging"
+@6
+build is "Build App"
+@10
+build is "Unit tests backend/frontend"
+@17
+build is "Static code analysis"
+@23
+build is "Publiceer product"
+@28
+build is {-}
+build -> dev: publicatie\n\n
+
+@28
+dev is "Release candidate (versie 2)"
+
+dev --> ci@0: start integratie van release candidate\n
+@0
+ci is "Pull laatste Release Candidate"
+@9
+ci is "Deploy naar testomgeving"
+@16
+ci is "Uitvoeren integratie tests"
+@23
+ci is "Stage product"
+@28
+ci is {-}
+ci -> master: promotie\n\n
+
+@28
+master is "App (versie 2)"
+
+@15
+master -> production : Installatie **versie 1**\nbij **klant X**
+@30
+master -> production : Installatie **versie 2**\nbij **klant X**
+@35
+master -> production : Installatie **versie 2**\nbij **klant Y**
+
+@38
 
 @enduml

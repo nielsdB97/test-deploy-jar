@@ -1,7 +1,7 @@
-Voor het ontwikkelen van de WebGUI is gekozen voor Microsoft Visual Studio Code.
+Voor het ontwikkelen van de WebGUI is gekozen voor Microsoft Visual Studio Code (MSVSC).
 Deze is gratis te downloaden en biedt goede ondersteuning voor ontwikkelen in Java en Javascript, TypeScript, HTML en CSS.
 
-Na installatie zijn de volgende extensions handig om extra toe te voegen aan Visual Studio:
+Na installatie zijn de volgende extensions handig om extra toe te voegen aan MSVSC:
 
 - Java (RedHat)
 - Maven
@@ -18,3 +18,13 @@ Na installatie zijn de volgende extensions handig om extra toe te voegen aan Vis
 - Asciidoc
 - PlantUML
 - Jenkins file support (ivory lab)
+
+=== Preview asciidoc
+
+In MSVSC kun je tijdens het schrijven van je documentatie het resultaat 'previewen'.
+Dit kan na installatie van de asciidoc plugin en in het geopende asciidoc bestand de toetsencombinatie Crtl+Shift+V aan te slaan.
+
+=== Preview plantuml
+
+In MSVSC kun je tijdens het uitschrijven van je diagram in plantuml het resultaat 'previewen'.
+Dit kan na installatie van de plantuml plugin en in het geopende asciidoc bestand de toetsencombinatie Alt+D aan te slaan.
