@@ -15,4 +15,3 @@ https://www.baeldung.com/spring-boot-jasypt
 
 https://stackoverflow.com/questions/37404703/spring-boot-how-to-hide-passwords-in-properties-file
 
-
