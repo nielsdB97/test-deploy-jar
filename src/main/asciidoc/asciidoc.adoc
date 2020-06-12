@@ -1,4 +1,4 @@
-=== Ascii Doctor
+==== Ascii Doctor
 
 De documentatie van dit product is gegenereerd met Ascii Doctor.
 Ascii Doctor is een doc-as-code oplossing waarbij de documentatie bij de code wordt bewaard en geversioneerd.
@@ -6,7 +6,7 @@ Tijdens het maken van het software product wordt deze documentatie omgezet naar 
 
 Quick reference: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
 
-==== PlantUML Diagrammen
+==== Diagrammen
 
 De diagrammen in deze documentatie zijn opgesteld in PlantUML.
 Tijdens het maken van het software product worden de diagrammen m.b.v. Graphviz omgezet naar een afbeelding en in de documentatie opgenomen.
