@@ -4,3 +4,25 @@ In het onderstaande diagram zijn op hoog niveau de verschillende functionaliteit
 ....
 include::diagrams/use-case-model.puml[]
 ....
+
+=== Vragenlijst
+
+[%header,cols=3]
+|===
+|Ref|Vraag|Antwoord
+
+|F01
+|Is het toegestaan voor de Qwik Inrichter App (ookwel WebGUI) om tabellen toe te voegen aan de database van Qwik?
+|
+
+|F02
+|Is het denkbaar dat er meerdere inrichters simultaan in inrichting van de WebGUI aanpassen?
+|
+
+|F03
+|Zijn er ook scenario's denkbaar dat gebruikers met de Inrichter rol die wel inzage moeten hebben tot de persoonlijke gegevens in Qwik?
+|
+
+|F04
+|Wordt de Qwik Inrichter App alleen gebruikt door medewerkers van IG&H danwel de pensioenfonds/verzekeraar?
+|
