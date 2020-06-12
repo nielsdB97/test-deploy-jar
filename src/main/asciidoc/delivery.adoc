@@ -4,7 +4,67 @@ CAUTION: Automatisch deployen naar een Test VM
 
 CAUTION: Versionering (Maven enforcer plugin?)
 
+=== Algemeen proces
 [plantuml,delivery-pipeline,png]
 ....
 include::diagrams/delivery-pipeline.puml[]
 ....
+
+=== Strategien
+
+Er kan op verschillende manieren invulling worden gegeven aan het software delivery proces.
+Er zijn vandaag de dag twee populaire strategien die we kunnen aanbevelen.
+
+==== GitFlow
+
+Hierbij worden de verschillende stadia van development, integratie en uitrol naar productie ondergebracht in het source control management systeem (bijv Git).
+Er bestaat voor elk stadium een aparte branch en de source code wordt gepromoveerd tussen de deze branches van develop uit eindelijk naar een release branch.
+De release branch bevat dan de versie (en history) van de source code die goed genoeg is geacht om bij klanten in productie te nemen.
+
+Voordelen:
+
+- Makkelijk te implementeren
+- Mogelijkheid om per klant een eigen release vast te leggen inclusief klant specifieke aanpassingen (raadzaam om dit te beperken tot klant specifieke omgevingsconfiguratie)
+
+Nadelen:
+
+- Er is geen product archief, het product moet welke keer opnieuw worden gemaakt van de source code zoals die op een gegeven moment in de tijd was.
+- Lastiger te achterhalen welke versie van de source code bij een klant is uitgerold.
+- In theorie is mogelijk om wijzigingen aan te brengen in een release zonder dat deze wijziging alle stadia heeft doorlopen om zeker te zijn dat het product naar behoren zal functioneren.
+- Een wijziging van release naar develop (dus omgekeerde route) kan leiden tot zogeheten 'merge' problemen
+
+Technologiën:
+
+- Source Control Management Systeem: bijv Git
+- Build tool: bijv Maven
+- Build voorziening: bijv GitLabs
+
+==== Build once run everywhere
+
+Hierbij wordt eenmalig het product gemaakt van de source code (laatste stand) in het source control management systeem.
+Het product zal vervolgens een aantal stadia moeten doorlopen alvorens met vertrouwen kan worden gesteld dat het goed genoeg is geacht om bij klanten in productie te nemen.
+
+Voordelen:
+
+- Product is gecontroleerd en wordt in principe niet meer aangepast
+- Product versie is geborgd, gemakkelijk te achterhalen en herleidbaar tot de source code
+- Tevens een oplossing voor producten die worden samengesteld uit eigengemaakt half fabrikaten (bijv Java libraries)
+
+Nadelen:
+
+- Vergt een repository om producten te bewaren
+- Vergt een dynamische product versionerings strategie en pipelines die hier mee om moeten kunnen gaan
+
+Technologiën:
+
+- Source Control Management Systeem: bijv Git
+- Build tool: bijv Maven i.c.m. plugins/bots voor dynamisch versie management
+- Build voorziening: bijv Jenkins
+- Product repository: bijv Git Rails, Nexus, Docker Registry
+
+==== Advies
+
+Build once run everywhere vergt een redelijke investering welke zich pas terugverdiend indien er vaak naar (gelijkwaardige) productie omgevingen wordt uitgerold.
+Gegeven de aard van deze applicatie en dat installatie wordt gevolgd door handmatige inrichting, is het raadzaam om in voorlopig te kiezen voor de GitFlow strategie.
+
+
