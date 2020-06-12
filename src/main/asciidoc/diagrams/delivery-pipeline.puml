@@ -1,56 +1,60 @@
 @startuml
 hide time-axis
 scale 1 as 25 pixels
+concise "**Source code repository**" as scm
 concise "//Build pipeline//" as build
-concise "**Build repository**" as dev
 concise "//Integration pipeline//" as ci
-concise "**Product repository**" as master
+concise "**Build repository**" as dev
+concise "**Release repository**" as master
 concise "**__Klant omgevingen__**" as production
 
-build is "Laatste stand"
 dev is "Release candidate (versie 1)"
-master is "App (versie 1)"
+master is "Released App (versie 1)"
+
+@0
+scm is {-}
+build is {-}
+ci is {-}
 
 @1
-build is "Code wijziging"
-@6
+scm is "Wijziging"
+@4
+scm is {-}
+scm -> build@1: Start build van wijzig\n
+
+@1
 build is "Build App"
-@10
+@4
 build is "Unit tests backend/frontend"
-@17
+@11
 build is "Static code analysis"
-@23
+@17
 build is "Publiceer product"
-@28
+@22
 build is {-}
-build -> dev: publicatie\n\n
-
-@28
+build -> dev: Stage\n\n\n\n\n
+build --> ci@1: Start integratie van release candidate\n
 dev is "Release candidate (versie 2)"
-
-dev --> ci@0: start integratie van release candidate\n
-@0
+@1
 ci is "Pull laatste Release Candidate"
 @9
 ci is "Deploy naar testomgeving"
 @16
 ci is "Uitvoeren integratie tests"
 @23
-ci is "Stage product"
-@28
+ci is "Stage"
+@26
 ci is {-}
-ci -> master: promotie\n\n
-
-@28
-master is "App (versie 2)"
+ci -> master: Stage\n\n\n\n\n
+master is "Released App (versie 2)"
 
 @15
 master -> production : Installatie **versie 1**\nbij **klant X**
-@30
+@28
 master -> production : Installatie **versie 2**\nbij **klant X**
-@35
+@33
 master -> production : Installatie **versie 2**\nbij **klant Y**
 
-@38
+@36
 
 @enduml
