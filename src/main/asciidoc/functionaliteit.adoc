@@ -20,7 +20,7 @@ include::diagrams/use-case-model.puml[]
 |
 
 |F03
-|Zijn er ook scenario's denkbaar dat gebruikers met de Inrichter rol die wel inzage moeten hebben tot de persoonlijke gegevens in Qwik?
+|Zijn er ook scenario's denkbaar dat gebruikers met de Inrichter rol inzage moeten hebben in de persoonlijke gegevens in Qwik?
 |
 
 |F04
