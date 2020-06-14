@@ -27,9 +27,9 @@ node "Werkplek: inrichter\n(toekomstige situatie)" as TIW {
 TIW -[hidden]left- Bastion
 node Server {
     node "Window/Linux" as SOS {
-        file "Qwik Web App Configuratie" as AppConfig
-        file "Qwik Web App Omgevingsconfiguratie" as OmgConfig
-        file "Qwik Web App Inrichting" as InrichtingConfig
+        file "Qwik Web App\nStandaard configuratie" as AppConfig
+        file "Qwik Web App\nKlant configuratie" as OmgConfig
+        file "Qwik Web App\nGUI instellingen" as InrichtingConfig
         node "Java Virtuele Machine\n(OpenJDK 11)" as JavaQwikWebApp {
             component "Qwik Web App" as QwikWebApp
         }

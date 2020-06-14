@@ -1,11 +1,9 @@
 @startuml
-title Use Case Model - Inrichter
-
 actor Inrichter as User
 
 rectangle "Qwik Inrichter App" as App {
     usecase "Raadplegen van de inrichting van deze GUI" as Kern
-        usecase "Map database tabel inhoud op dynamisch venster" as MDV
+        usecase "Map database tabel op dynamisch venster" as MDV
         usecase "Map menu items" as MMI
         usecase "Opvoeren lookup queries" as QRY
         usecase "..." as KETC
@@ -57,7 +55,7 @@ Inrichting ---[hidden]down-- Data
     PRR -[hidden]- PRO
     PRO -[hidden]- STAT
     STAT -[hidden]- IETC
-Data --[hidden]down-- AUTH
+Data --[hidden]down- AUTH
     WG -[hidden]- REG
     REG -[hidden]- FORM
     FORM -[hidden]- DETC

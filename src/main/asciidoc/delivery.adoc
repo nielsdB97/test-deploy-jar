@@ -10,15 +10,15 @@ CAUTION: Versionering (Maven enforcer plugin?)
 include::diagrams/delivery-pipeline.puml[]
 ....
 
-=== Strategien
+=== Strategiën
 
 Er kan op verschillende manieren invulling worden gegeven aan het software delivery proces.
-Er zijn vandaag de dag twee populaire strategien die we kunnen aanbevelen.
+Er zijn vandaag de dag twee populaire strategiën die we kunnen aanbevelen.
 
 ==== GitFlow
 
 Hierbij worden de verschillende stadia van development, integratie en uitrol naar productie ondergebracht in het source control management systeem (bijv Git).
-Er bestaat voor elk stadium een aparte branch en de source code wordt gepromoveerd tussen de deze branches van develop uit eindelijk naar een release branch.
+Er bestaat voor elk stadium (develop, build, release) een aparte branch en de source code wordt gepromoveerd tussen de deze branches van develop uit eindelijk naar een release branch.
 De release branch bevat dan de versie (en history) van de source code die goed genoeg is geacht om bij klanten in productie te nemen.
 
 Voordelen:

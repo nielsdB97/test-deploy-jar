@@ -3,7 +3,8 @@
 :listing-caption: Listing
 :pdf-page-size: A4
 
-:toc: 
+:toc:
+:toc-title: Inhoudsopgave
 :toc-placement: left
 :toclevels: 4
 :icons: font

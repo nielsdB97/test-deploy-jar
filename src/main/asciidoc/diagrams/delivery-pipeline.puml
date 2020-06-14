@@ -1,6 +1,6 @@
 @startuml
 
-|**Source repository**|
+|**Source code develop repository**|
 start
 :Code wijziging;
 |//Build pipeline//|
@@ -14,9 +14,9 @@ else (ja)
 endif
 
 |**Build repository**|
-:Release kandidaat/
+:App Release kandidaat (RC)/
 |//Integratie pipeline//|
-:Deploy naar testomgeving;
+:Deploy RC naar testomgeving;
 :Uitvoeren integratie tests;
 if (Succes) then (nee)
     end
@@ -24,7 +24,7 @@ else (ja)
     :Promoveer product;
 endif
 |**Release repository**|
-:Release/
+:Released App/
 |**Klant omgeving(en)**|
 -[dashed]->
 :Installeer release;
