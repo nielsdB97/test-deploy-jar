@@ -1,3 +1,5 @@
+This is an example application containing output from the JHipster generator.
+
 # feniqsweb
 
 This application was generated using JHipster 6.9.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.9.1](https://www.jhipster.tech/documentation-archive/v6.9.1).
